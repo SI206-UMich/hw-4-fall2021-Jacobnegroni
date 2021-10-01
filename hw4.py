@@ -145,7 +145,7 @@ class TestAllMethods(unittest.TestCase):
         self.assertEqual(self.s3.earnings, 0)
         self.assertEqual(self.s2.cost, 9)
 
-	# Check that the stall can stock up properly.
+	# Check that the stall can stock up properly
     def test_stocking(self):
         inventory = {"Burger": 10}
         s4 = Stall("Misc Stall", inventory)
@@ -228,11 +228,11 @@ def main():
     customer3 = Customer('Josh', 5)
     customer4 = Customer('Jill', 10)
 
-    stall1 = Stall("American", inv1, 5)
-    stall2 = Stall("Italian", inv2, 11)
+    stall1 = Stall("American",inv1,5)
+    stall2 = Stall("Italian",inv2,11)
 
-    cashier1 = Cashier("Mo",[stall1,stall2])
-    cashier2 = Cashier("Jo",[stall1])
+    cashier1 = Cashier('Mo',[stall1,stall2])
+    cashier2 = Cashier('Jo',[stall1])
     #Try all cases in the validate_order function
     #Below you need to have *each customer instance* try the four cases
     #case 1: the cashier does not have the stall 
@@ -242,11 +242,11 @@ def main():
     customer1.validate_order(cashier1,stall1,'Spinach',120)
     customer2.validate_order(cashier2,stall1,'Spinach',120)
     #case 3: the customer does not have enough money to pay for the order: 
-    customer4.validate_order(cashier1,stall2,'Bagel', 3)
-    customer3.validate_order(cashier1,stall2,'Bagel', 2)
+    customer4.validate_order(cashier1,stall2,'Bagel',4)
+    customer3.validate_order(cashier1,stall2,'Bagel',3)
     #case 4: the customer successfully places an order
-    customer1.validate_order(cashier1,stall1,'Bacon', 1)
-    customer2.validate_order(cashier1,stall2,'Wings', 3)
+    customer1.validate_order(cashier1,stall1,'Bacon',1)
+    customer2.validate_order(cashier1,stall2,'Wings',3)
 
 if __name__ == "__main__":
 	main()
